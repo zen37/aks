@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gogin-redis-server
+  namespace: go-app-autoscaling
+  labels:
+    app: goginapp-redis-server
+spec:
+  selector:
+    matchLabels:
+      app: goginapp-redis-server
+  template:
+    metadata:
+      labels:
+        app: goginapp-redis-server
+    spec:
+      containers:
+        - name: gogin-redis-server
+          image: redis:latest
+          ports:
+            - containerPort: 6379
