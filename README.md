@@ -1,0 +1,1 @@
+Illustrates some of 'Azure Kubernetes Services' capabilities: scaling out pods and nodes.
