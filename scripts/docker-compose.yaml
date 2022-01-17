@@ -3,7 +3,7 @@ version: "3.0"
 services:
 
   gogin-app:
-    image: cybernetor066/gogin_app_image:v1.0
+    image: img171422/gogin_app_image:v1.0
     ports:
       - "8080:8080"
     depends_on:
@@ -12,4 +12,4 @@ services:
   redis_server:
     image: "redis:latest"
     ports:
-      - "6379:6379"
+      - "7001:7001"

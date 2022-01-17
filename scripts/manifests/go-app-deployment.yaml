@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gogin-app
-  namespace: go-app-autoscaling
+  # namespace: go-app-autoscaling
   labels:
     app: go-app
 spec:
@@ -18,11 +18,14 @@ spec:
     spec:
       containers:
         - name: gogin-app
-          image: cybernetor066/gogin_app_image:v1.0
+          image: img171422/gogin_app_image:v1.0
           ports:
             - containerPort: 8080
+
           resources:
             limits:
-              cpu: 500m
+              memory: 512Mi
+              cpu: "1"
             requests:
-              cpu: 200m
+              memory: 256Mi
+              cpu: "0.2"

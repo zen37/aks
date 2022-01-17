@@ -3,7 +3,7 @@ apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"
 metadata:
   name: "goginapp-hpa"
-  namespace: "go-app-autoscaling"
+  # namespace: "go-app-autoscaling"
   labels:
     app: "gogin-hpa-app"
 spec:
@@ -12,9 +12,9 @@ spec:
     name: "gogin-app"
     apiVersion: "apps/v1"
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 3
   metrics:
     - type: "Resource"
       resource:
         name: "cpu"
-        targetAverageUtilization: 10
+        targetAverageUtilization: 5
